@@ -1,0 +1,32 @@
+version: '3.2'
+
+networks:
+  wallet-network:
+
+services:
+  wallet:
+    build:
+      context: .
+      dockerfile: ./Dockerfile
+    ports:
+      - "2565:2565"
+    depends_on:
+        - db
+    environment:
+      DATABASE_URL: postgres://root:root@db/wallets?sslmode=disable
+      PORT: 2565
+    networks:
+      - wallet-network
+  db:
+    image: postgres
+    ports:
+      - "5432:5432"
+    environment:
+      POSTGRES_USER: root
+      POSTGRES_PASSWORD: root
+      POSTGRES_DB: wallets
+    restart: on-failure
+    volumes:
+      - ./db:/docker-entrypoint-initdb.d/
+    networks:
+      - wallet-network

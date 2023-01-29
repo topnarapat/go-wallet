@@ -1,0 +1,30 @@
+version: '3.2'
+
+networks:
+  wallet-integration-test:
+
+services:
+  it_tests:
+    build:
+      context: .
+      dockerfile: ./Dockerfile.test
+    volumes:
+      - .:/go/src/target
+    depends_on:
+      - db
+    networks:
+      - wallet-integration-test
+  db:
+    image: postgres:12.12
+    ports:
+      - "5432:5432"
+    environment:
+      POSTGRES_USER: root
+      POSTGRES_PASSWORD: root
+      POSTGRES_DB: wallets
+    restart: on-failure
+    volumes:
+      - ./db:/docker-entrypoint-initdb.d/
+    networks:
+      - wallet-integration-test
+    
