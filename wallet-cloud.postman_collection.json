@@ -1,0 +1,146 @@
+{
+	"info": {
+		"_postman_id": "959de199-1782-4a54-9545-1e704ce561ef",
+		"name": "Simple Wallet API GCP",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "16969957"
+	},
+	"item": [
+		{
+			"name": "GET All Wallets",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://wallet-kyxxckomzq-as.a.run.app/wallet",
+					"protocol": "https",
+					"host": [
+						"wallet-kyxxckomzq-as",
+						"a",
+						"run",
+						"app"
+					],
+					"path": [
+						"wallet"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET Wallet",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://wallet-kyxxckomzq-as.a.run.app/wallet/1",
+					"protocol": "https",
+					"host": [
+						"wallet-kyxxckomzq-as",
+						"a",
+						"run",
+						"app"
+					],
+					"path": [
+						"wallet",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "POST Create Wallet",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"balance\": 3000\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://wallet-kyxxckomzq-as.a.run.app/wallet",
+					"protocol": "https",
+					"host": [
+						"wallet-kyxxckomzq-as",
+						"a",
+						"run",
+						"app"
+					],
+					"path": [
+						"wallet"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "PUT Add/Deduct Money",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"balance\": 1500,\r\n    \"operation\": \"Add\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://wallet-kyxxckomzq-as.a.run.app/wallet/1",
+					"protocol": "https",
+					"host": [
+						"wallet-kyxxckomzq-as",
+						"a",
+						"run",
+						"app"
+					],
+					"path": [
+						"wallet",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "PUT Active/Deactive Wallet",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"status\": \"Deactive\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://wallet-kyxxckomzq-as.a.run.app/wallet/1/status",
+					"protocol": "https",
+					"host": [
+						"wallet-kyxxckomzq-as",
+						"a",
+						"run",
+						"app"
+					],
+					"path": [
+						"wallet",
+						"1",
+						"status"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

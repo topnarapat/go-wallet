@@ -21,6 +21,10 @@ docker-compose -f docker-compose.test.yml up --build --abort-on-container-exit -
 docker-compose -f docker-compose.test.yml down --rmi local -v
 ```
 
+* Postman collection สำหรับทดสอบ API ทั้งหมดรันผ่าน
+	- สำหรับทดสอบบน localhost [postman collection](wallet-cloud.postman_collection.json)
+	- สำหรับทดสอบบน localhost [postman collection](localhost-wallet.postman_collection.json)
+
 #### Technical Details: List all wallets
 * GET /wallet
 * Response Body
@@ -146,6 +150,3 @@ docker-compose -f docker-compose.test.yml down --rmi local -v
 	"created_at": "2023-01-27T12:30:00Z" 
 }
 ```
-
-* Postman collection สำหรับทดสอบ API ทั้งหมดรันผ่าน
-	- สำหรับทดสอบบน localhost [postman collection](localhost-wallet.postman_collection.json)

@@ -76,6 +76,10 @@ func (s walletService) CreateWallet(w WalletRequest) (*WalletResponse, error) {
 }
 
 func (s walletService) SetWalletBalance(id int64, w AddWalletRequest) (*WalletResponse, error) {
+	if w.Operation != "Add" && w.Operation != "Deduct" {
+		return nil, errs.NewBadRequest("operation must be Add or Deduct")
+	}
+
 	wallet, err := s.walletRepo.GetWallet(id)
 	if err != nil {
 		if err == sql.ErrNoRows {
@@ -115,6 +119,10 @@ func (s walletService) SetWalletBalance(id int64, w AddWalletRequest) (*WalletRe
 }
 
 func (s walletService) SetStatusWallet(id int64, st StatusWalletRequest) (*WalletResponse, error) {
+	if st.Status != "Active" && st.Status != "Deactive" {
+		return nil, errs.NewBadRequest("operation must be Active or Deactive")
+	}
+
 	wallet, err := s.walletRepo.SetStatusWallet(id, st.Status)
 	if err != nil {
 		if err == sql.ErrNoRows {
