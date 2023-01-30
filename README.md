@@ -1,7 +1,7 @@
 # Simple Wallet Api
 * api start from port `:2565`
 * use PostgreSQL
-* database url *MUST* get from environment variable name `DATABASE_URL`
+* database url get from environment variable name `DATABASE_URL`
 
 ### Create and start containers
 ```console
@@ -30,13 +30,13 @@ docker-compose -f docker-compose.test.yml down --rmi local -v
         "wallet_id": "1",
         "balance": 1000,
         "status": "Active",
-        "created_at": "2023-01-27T12:30:00Z", 
+        "created_at": "2023-01-27T12:30:00Z"
     },
     {
         "wallet_id": "2",
         "balance": 2000,
         "status": "Active",
-        "created_at": "2023-01-27T12:30:00Z", 
+        "created_at": "2023-01-27T12:30:00Z"
     }
 ]
 ```
@@ -46,7 +46,7 @@ docker-compose -f docker-compose.test.yml down --rmi local -v
 * Request Body
 ```json
 {
-	"balance": 1000,
+	"balance": 1000
 }
 ```
 * Response Body
@@ -55,7 +55,7 @@ docker-compose -f docker-compose.test.yml down --rmi local -v
 	"wallet_id": "1",
 	"balance": 1000,
 	"status": "Active",
-	"created_at": "2023-01-27T12:30:00Z", 
+	"created_at": "2023-01-27T12:30:00Z"
 }
 ```
 
@@ -68,7 +68,7 @@ docker-compose -f docker-compose.test.yml down --rmi local -v
     "wallet_id": "1",
     "balance": 1000,
     "status": "Active",
-    "created_at": "2023-01-27T12:30:00Z", 
+    "created_at": "2023-01-27T12:30:00Z"
 }
 ```
 
@@ -79,7 +79,7 @@ docker-compose -f docker-compose.test.yml down --rmi local -v
 ```json
 {
 	"balance": 1000,
-    "operation": "Add",
+    "operation": "Add"
 }
 ```
 * Response Body
@@ -88,7 +88,7 @@ docker-compose -f docker-compose.test.yml down --rmi local -v
 	"wallet_id": "1",
 	"balance": 2000,
 	"status": "Active",
-	"created_at": "2023-01-27T12:30:00Z", 
+	"created_at": "2023-01-27T12:30:00Z"
 }
 ```
 
@@ -99,7 +99,7 @@ docker-compose -f docker-compose.test.yml down --rmi local -v
 ```json
 {
 	"balance": 500,
-    "operation": "Deduct",
+    "operation": "Deduct"
 }
 ```
 * Response Body
@@ -108,7 +108,7 @@ docker-compose -f docker-compose.test.yml down --rmi local -v
 	"wallet_id": "1",
 	"balance": 500,
 	"status": "Active",
-	"created_at": "2023-01-27T12:30:00Z", 
+	"created_at": "2023-01-27T12:30:00Z"
 }
 ```
 
@@ -118,7 +118,7 @@ docker-compose -f docker-compose.test.yml down --rmi local -v
 * Request Body
 ```json
 {
-    "operation": "Active",
+    "operation": "Active"
 }
 ```
 * Response Body
@@ -127,7 +127,7 @@ docker-compose -f docker-compose.test.yml down --rmi local -v
 	"wallet_id": "1",
 	"balance": 500,
 	"status": "Active",
-	"created_at": "2023-01-27T12:30:00Z", 
+	"created_at": "2023-01-27T12:30:00Z"
 }
 ```
 
@@ -143,7 +143,7 @@ docker-compose -f docker-compose.test.yml down --rmi local -v
 	"wallet_id": "1",
 	"balance": 500,
 	"status": "Deactive",
-	"created_at": "2023-01-27T12:30:00Z", 
+	"created_at": "2023-01-27T12:30:00Z" 
 }
 ```
 
