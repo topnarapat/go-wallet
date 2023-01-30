@@ -21,7 +21,7 @@ docker-compose -f docker-compose.test.yml up --build --abort-on-container-exit -
 docker-compose -f docker-compose.test.yml down --rmi local -v
 ```
 
-* Postman collection สำหรับทดสอบ API ทั้งหมดรันผ่าน
+* Postman collection สำหรับทดสอบ API ทั้งหมด
 	- สำหรับทดสอบบน localhost [postman collection](wallet-cloud.postman_collection.json)
 	- สำหรับทดสอบบน localhost [postman collection](localhost-wallet.postman_collection.json)
 
