@@ -3,10 +3,16 @@
 * use PostgreSQL
 * database url get from environment variable name `DATABASE_URL`
 
+### Url for test api
+```console
+https://wallet-kyxxckomzq-as.a.run.app/wallet
+```
+
+### Test Local
 ### Create and start containers
 ```console
 docker-compose up
-```
+```console
 ### Stop and remove containers, networks
 ```console
 docker-compose down --rmi local -v
