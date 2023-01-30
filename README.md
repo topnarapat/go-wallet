@@ -79,7 +79,7 @@ docker-compose -f docker-compose.test.yml down --rmi local -v
 ```json
 {
 	"balance": 1000,
-    "operation": "Add"
+    "operation": "Add",
 }
 ```
 * Response Body
@@ -99,7 +99,7 @@ docker-compose -f docker-compose.test.yml down --rmi local -v
 ```json
 {
 	"balance": 500,
-    "operation": "Deduct"
+    "operation": "Deduct",
 }
 ```
 * Response Body
@@ -118,7 +118,7 @@ docker-compose -f docker-compose.test.yml down --rmi local -v
 * Request Body
 ```json
 {
-    "operation": "Active"
+    "operation": "Active",
 }
 ```
 * Response Body
