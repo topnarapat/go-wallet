@@ -12,7 +12,7 @@ https://wallet-kyxxckomzq-as.a.run.app/wallet
 ### Create and start containers
 ```console
 docker-compose up
-```console
+```
 ### Stop and remove containers, networks
 ```console
 docker-compose down --rmi local -v
